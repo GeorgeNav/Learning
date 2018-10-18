@@ -1,0 +1,14 @@
+/* Reference: Wrapper */
+// Used for putting build tool under version control so anyone using it is using that exact one
+// 4 Files: .jar, .properties, shell/batch script
+//     shell/bath script will first check if gradle is installed, download, then execute command
+//     gradle/wrapper will have gradle-wrapper.jar and gradle-wrapper.properties files
+/*
+Wrapper (build.gradle    gradle          gradlew         gradlew.bat):
+    $ gradle wrapper
+Wrapper tasks:
+    $ ./gradlew wrapper
+Configurations of gradle wrapper are in: gradle/wrapper/gradle-wrapper.properties
+    $ emacs ./gradle/wrapper/gradle-wrapper.properties
+*/
+wrapper { gradleVersion = '2.2' } // Uses specific version of gradle wrapper (downloads if not already installed and must run: $ gradle wrapper  to download this version specified)

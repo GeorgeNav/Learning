@@ -1,0 +1,11 @@
+/* Reference: Automate testing */
+// Must place tests in src/test folder (change location by changing test sourceSet)
+// Manually configure test dependencies
+// Detailed reports are in build/reports/tests/index.html
+/*
+Open test:
+    open ./build/reports/tests/test/index.html
+*/
+apply plugin: 'java'
+repositories { mavenCentral() }
+dependencies { testCompile 'junit:junit:4.11' } // using junit testing framework by adding it as a dependency

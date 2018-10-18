@@ -1,0 +1,27 @@
+// This program will output the circumference and area
+// of the circle with a given radius.
+
+// PLACE YOUR NAME HERE
+
+#include <iostream>
+using namespace std;
+
+const double PI = 3.14;
+const double RADIUS = 5.2;
+
+int main()
+{
+	double cicumference, area;
+
+	// Calculate circumference
+	circumference = 2 * PI * RADIUS;
+ 
+
+	// Fill in the code to output the circumference
+
+	// Fill in the code to calculte area of circle
+
+	// Fill in the code to output  the area of the circle
+
+	return 0;
+}

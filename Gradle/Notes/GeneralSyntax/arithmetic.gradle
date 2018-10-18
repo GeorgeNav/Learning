@@ -1,0 +1,4 @@
+/* Reference: Arithmetic */
+
+def value = Math.sqrt(144) // value is set to Double 12 since sqrt of Integer 144 using Math.sqrt() is converted to Double 12
+println("value type: ${value.class} and value: $value")

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Must contain:
+    Defines android namespace (should always be set as shown):
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    Package attributes (can only start with letters):
+    - applies name as namespace for app's R.java class (accesses app resources)
+    - uses name to resolve relative class names declared in manifest
+        package="gradle.udacity.com.favoritetoys"
+Can contain (https://developer.android.com/guide/topics/manifest/manifest-element.html):
+    <compatible-screens>
+    <instrumentation>
+    <permission>
+    <permission-group>
+    <permission-tree>
+    <supports-gl-texture>
+    <supports-screens>
+    <uses-configuration>
+    <uses-feature>
+    <uses-permission>
+    <uses-permission-sdk-23>
+    <uses-sdk>
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gradle.udacity.com.favoritetoys">
+    <!-- Must contain <application> -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- resolved to be com.udacity.gradle.MainActivity because of package attribute -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application' // fetched from jcenter()
+
+android { // android configuration block
+    compileSdkVersion 26 // required
+    /* buildToolsVersion and sourceSets also required */
+    defaultConfig { // attributes of android manifest
+        applicationId "gradle.udacity.com.myapplication"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    // By default src/main sourceSet is included in all app variances
+    buildTypes { // build types are delcared here on the buildTypes script block
+        /* debug isn't listed but exists */
+        release { // release type
+            minifyEnabled false // disables packaging optimizations
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        // Set the application id suffix for the 'debug' build type to 'debug.
+        debug {
+            applicationIdSuffix "debug"
+        }
+    }
+}
+// Used for different types of resolutions (screen sizes)
+flavorDimensions "tier" // Specifies one flavor dimension
+
+// With new flavors, there are new sourceSets for flavor specific code and resources
+productFlavors {
+    free {
+        dimension "tier" // declares free build variant on the dimesion of teir
+        applicationId "com.example.udacity.declaringflavors.free" // path to build variant recourses
+    }
+    paid {
+        dimension "tier" // declares free build variant on the dimesion of teir
+        applicationId "com.example.udacity.declaringflavors.paid" // path to build variant recourses
+        minSdkVersion 21 // forces minimum sdk of 21 for the paid version of this app build
+    }
+}
+dependencies {
+    compile project(':javaJokes') // compile time dependency on the project javaJokes
+    implementation fileTree(dir: 'libs', include: ['*.jar']) // declares dependencies for all *.jar files in libs directory
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

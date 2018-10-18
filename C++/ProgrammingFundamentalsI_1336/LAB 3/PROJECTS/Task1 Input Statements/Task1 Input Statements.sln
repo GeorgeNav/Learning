@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task1 Input Statements", "Task1 Input Statements\Task1 Input Statements.vcxproj", "{F49456AA-91A3-4050-B816-5375C2864C88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F49456AA-91A3-4050-B816-5375C2864C88}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F49456AA-91A3-4050-B816-5375C2864C88}.Debug|Win32.Build.0 = Debug|Win32
+		{F49456AA-91A3-4050-B816-5375C2864C88}.Release|Win32.ActiveCfg = Release|Win32
+		{F49456AA-91A3-4050-B816-5375C2864C88}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

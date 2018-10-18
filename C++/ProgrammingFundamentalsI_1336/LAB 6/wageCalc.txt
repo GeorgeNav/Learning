@@ -1,0 +1,34 @@
+// Program reads an employee's hourly pay rate and the number of hours worked and displays the wage
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/* FILL IN the function prototype for getData */
+
+int main ()
+{
+    float  hoursWorked=0, payRate=0, wage=0;
+
+    cout  << fixed  << showpoint;
+
+    /* WRITE code to call function getData */
+
+    wage = hoursWorked * payRate  ;
+    cout  << setw(10)  << hoursWorked
+          << setw(10)  << payRate
+          << setw(10)  << wage  << endl;
+
+	system("pause");
+    return 0;
+}
+
+//*****************************************************
+
+/* WRITE the function heading for getData */
+
+// prompts the user for hours worked and pay rate, reads them, and passes them back to main() as reference parameters
+{
+    /* WRITE Code to prompt for hours worked and pay rate */
+    /* WRITE Code to read read hours worked and pay rate */
+}

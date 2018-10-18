@@ -1,0 +1,76 @@
+/* Reference: General tasks */
+
+// Rename this file to build.gradle for better integration with 'gradle tasks --all' command
+/* - - - Command-line:
+Run a task:
+    gradle -b tasks.gradle taskName
+Show tasks:
+    gradle -b tasks.gradle tasks --all
+*/
+task hello { // Defining a task named hello
+    description("description of task") // This is printed right beside task
+    group "Greeting" // This sets the task 'hello' group to 'Cool group' that the task belongs in, otherwise it will be placed in the 'Other tasks' group
+    doLast { // This body of command(s) will be done before completing task 'hello'
+        println("This is the end of $hello task") // Will print 'George Navarro' along with an endline
+    }
+}
+
+/* Dependencies */
+task brew { doLast { println("Brewing. Drip, drip, drip.") } }
+task pour {
+    dependsOn("brew") // pour will not run unless brew is ran
+    doLast { println "Pouring. Glug, glug, glug." }
+}
+task coffeeReady {
+    def taskList = tasks.matching{ task -> task.name.startsWith("pour") } // Creats a list of tasks that start with pour (one in this case)
+    dependsOn( taskList )
+    doLast { println("Coffee ready to add extras") }
+}
+task addSweetener(dependsOn: "pour") { // addSweetener will not run unless pour is ran
+    doLast { println("Adding sweetener. Stir, stir, stir.") }
+}
+task drink {
+    dependsOn("pour")// drink will not run unless pour is ran
+    doLast { println("Drinking. Gulp, gulp, gulp.") }
+}
+task blackCoffee {
+    dependsOn("drink") // blackCoffee will not run unless drink is ran
+    finalizedBy("endingStatement") // Everytime blackCoffee is ran, endingStatement will be ran right after
+    doLast { println "Mmmm, bitter! just how I like it." }
+}
+task sweetCoffee {
+    dependsOn = ["drink", "addSweetener"] // sweetCoffee will not run unless drink and addSweetener is ran (needs equal sign for multiple)
+    finalizedBy("endingStatement") // Everytime blackCoffee is ran, endingStatement will be ran right after
+    doLast { println "Mmmm, sweet! just how I like it." }
+}
+task endingStatement { doLast{ println("That was some good coffee") } }
+/* // ??? How is mustRunAfter() and shouldRunAfter used ???
+task afterStatement {
+    shouldRunAfter("blackCoffee")
+    mustRunAfter("endingStatement")
+    doLast{ println("coffee") }
+}
+*/
+
+/* Copying Files */
+task copyWeb(type: Copy) { // Copys
+    from('src/web') // Files from this dir
+    from('src/docs') { // Files from this dir..
+        include('*.txt') // ..only including files with the extension .txt
+        into('help') // Adds '/help' to 'build/web' of copyWeb task for the docs folder
+    }
+    into('build/web') // Default copy path from .gradle file root path
+}
+
+/* Zipping Files */
+task bundleWeb(type: Zip, dependsOn: copyWeb) {
+    baseName = 'web' // Name of zip file before .zip extension
+    destinationDir = file('build') // Directory to place .zip file
+    from 'build/web' // Copy files from 'build/web'
+    exclude 'build/images' // Exclude the folder 'build/images'
+}
+
+/* Assigning values to variables from gradle.properties, command-line, and from same script */
+// build.gradle (ext {}) > commandline (gradle -Pvariable="Hello from command line" taskName) > gradle.properties
+task printGreeting { doLast { println greeting } }
+/* ext { greeting("Hello from ext{}") } */

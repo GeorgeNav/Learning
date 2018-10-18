@@ -1,0 +1,28 @@
+/*
+Compile Person.class (creates a build folder)
+    gradle -b tasks_custom.gradle assemble
+*/
+// java plugin documentation: https://docs.gradle.org/current/userguide/java_plugin.html
+apply plugin: "java" // Adds many java tasks gradle can now use
+task execute(type: JavaExec) {
+    main = "com.udacity.gradle.Person" // tells JavaExec the task path of your main class
+    classpath = sourceSets.main.runtimeClasspath // We'll talk about this shortly
+}
+
+/* Modify jar task */
+jar {
+    manifest { // modify MANIFEST.MF
+    // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html
+        attributes 'Implementation-Version': '1.0' // adds this to build/tmp/jar/MANIFEST.MF
+    }
+}
+
+/* Configuring source sets */
+// https://docs.gradle.org/current/userguide/java_plugin.html#sec:source_sets
+sourceSets {
+    main {
+        java {
+            srcDirs 'java'
+        }
+    }
+}

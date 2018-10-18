@@ -1,0 +1,15 @@
+/* Reference: Variables */
+
+def foo = 6.5 // sets foo to BigDecimal
+println("foo = $foo of type ${foo.class}") // Returns an the BigDecimal
+foo = 5 // converts BigDecimal to Integer
+println("foo = $foo of type ${foo.class}") // Returns an the Integer
+foo = "foobar" // converts Integer to String
+println("foo = $foo of type ${foo.class}") // Returns a String
+
+/* Strings */
+def name = "I am George"
+println("$name") // Output: I am George
+def justName = name.substring(5,name.length()) // Captures part of string from element 7 to right before length of string (end)
+println("$justName") // Output: George
+

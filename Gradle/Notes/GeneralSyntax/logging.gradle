@@ -1,0 +1,19 @@
+/* Reference: logging */
+task hello(type: HelloTask)
+class HelloTask extends DefaultTask {
+    @TaskAction
+    void doAction() {
+        logger.info 'HelloTask task started' // [INFO] when debugging
+        logger.lifecycle 'Hello World' // [LIFECYCLE] when debugging
+        logger.info 'HelloTask task ended' // [INFO] when debugging
+    }
+}
+
+/*
+Debug build:
+    $ gradle -b logging.gradle --debug hello
+Find [DEBUG] string (for windows use findstr instead of grep):
+    $ gradle -b logging.gradle --debug hello | grep 'Catch me if you can'
+More info here: https://www.youtube.com/watch?time_continue=1&v=T2BaMj18U94
+*/
+logger.debug("Catch me if you can") // [DEBUG] when debugging

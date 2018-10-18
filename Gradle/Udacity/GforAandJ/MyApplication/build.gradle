@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        // Declares a build script dependency on this artifact coordinate
+        classpath 'com.android.tools.build:gradle:3.0.1' // location for android plugin
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter() // adds jcenter() repository to every sub project of this build
+        // sub projects can declare dependencies which will automatically be retrieved from jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

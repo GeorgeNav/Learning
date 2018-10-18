@@ -1,0 +1,19 @@
+/*
+Then use the `run` task to execute the project. Remember you can also execute
+Java using the built in JavaExec task type.
+*/
+apply plugin: 'java'
+apply plugin: 'application'
+
+/* run task depends on: processRecources, compileJava, and classes
+    $ gradle -b build.gradle run
+    $ gradle -b build.gradle solutionExecute
+*/
+
+// This line tells the application plugin what class to run
+mainClassName = "com.udacity.gradle.JokeTeller" // from src/main/java - file path with '.' instead of '/'
+
+task solutionExecute(type: JavaExec) {
+    main = "com.udacity.gradle.JokeTeller"
+    classpath = sourceSets.main.runtimeClasspath
+}

@@ -1,0 +1,40 @@
+// displays the borders of a box of size n by n/2 where n is a positive integer 
+// using the star symbol.
+        
+#include <iostream>
+using namespace std;
+
+void  displayStarBox(int );
+
+int main ()
+{
+    int  number;
+
+    cout  << "Enter the number of stars for the top; Enter 0 to quit " << endl;
+    cin  >> number;
+
+    while (number > 0 )  // this loops allows user to display more than one box of different sizes
+    {
+	/* WRITE call to displayStarBox() */
+				
+	cout  << endl << "Enter the number of stars for the top; Enter 0 to quit " << endl;
+
+	cin >> number;
+    }
+
+    system ("pause");
+    return 0;
+}
+//**************************************
+
+void  displayStarBox(int n)
+// 1. ADD documentation.
+{
+    /* 2. ADD code to display n stars on one line for top border line of box*/
+  
+    /* 3. ADD code to display (size / 2)-2 lines with a star lining up under the left-most star on the top line and a star lining up under the right-most star   */
+    
+
+    /* 4. ADD code to display size stars on one line for bottom border line of box */
+     
+}

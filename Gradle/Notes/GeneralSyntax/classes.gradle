@@ -1,0 +1,4 @@
+/* Reference: Classes */
+
+def foo = new java.util.Date() // foo is now an instance of java.util.Data() which holds the current date
+println "foo is now of type: ${foo.class} and has value: $foo" // Prints type and date

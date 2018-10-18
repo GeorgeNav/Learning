@@ -1,0 +1,51 @@
+
+// This program will input American money and convert it to foreign currency 
+// PLACE YOUR NAME HERE 
+
+
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+
+/* ADD code for prototypes of the functions */
+
+int main () 
+{ 
+	float dollars; float euros;  float yens; 
+	cout << fixed << showpoint << setprecision(2); 
+	cout << "Please input the amount of American Dollars you want converted " 
+	<< endl; 
+	cout << "to euros and yen" << endl; 
+	cin >> dollars; 
+
+	// Fill in the code to call currency coversion functions
+	
+	// Write output statment(s) to display values in dollar, euro, and yen on same line
+		
+	system("pause");
+	return 0; 
+} 
+
+
+float convertToYen(float dollars)
+// task: This function takes a dollar value and converts it to yens
+// data in: dollars
+// data returned: equivalent value in yens
+{
+	cout << "The function convertToYen was called with " << dollars <<" dollars"
+	<< endl << endl;
+	/* FILL IN code to convert value in parameter dollars from dollar to yen.  Lookup exchange rate on the Internet */
+	/*  Add code to return value */
+
+}
+
+float convertToEuros(float dollars)
+// task: This function takes a dollar value and converts it to euros
+// data in: dollars
+// data returned: equivalent value in euros
+{
+	cout << "The function convertToEuros was called with " << dollars
+	<< " dollars" << endl << endl;
+	/* FILL IN code to convert value in parameter dollars from dollar to yen.  Lookup exchange rate on the Internet */
+	/*  Add code to return value */
+}

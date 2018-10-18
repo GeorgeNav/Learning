@@ -1,0 +1,1 @@
+This folder contains images, strings, styles, layouts, ect

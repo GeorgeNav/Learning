@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task3 Chapter 8 Excerise 4", "Task3 Chapter 8 Excerise 4\Task3 Chapter 8 Excerise 4.vcxproj", "{C4FAD3F4-8C9E-42B9-8F2F-7E2680E42843}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4FAD3F4-8C9E-42B9-8F2F-7E2680E42843}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4FAD3F4-8C9E-42B9-8F2F-7E2680E42843}.Debug|Win32.Build.0 = Debug|Win32
+		{C4FAD3F4-8C9E-42B9-8F2F-7E2680E42843}.Release|Win32.ActiveCfg = Release|Win32
+		{C4FAD3F4-8C9E-42B9-8F2F-7E2680E42843}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

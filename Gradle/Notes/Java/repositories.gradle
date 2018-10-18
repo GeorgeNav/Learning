@@ -1,0 +1,75 @@
+/* Reference: Repositories */
+
+/* Repositories for dependencies */
+/* Libraries: mavenCentral(), jcenter()
+    - must have correct metadata to upload artifacts to these
+    - artifacts can be identified by coordinates (Example: testCompile 'junit:junit:4.12')
+    - artifacts might have dependencies of their own
+    - multiple artifacts that are using the same artifact will only be used once
+*/
+
+/* Adding dependency to gradle project from repository */
+// Gradle supports http, https, sftp, and file based repositories
+repositories { // Declare a repository to fetch a dependency from
+    flatDir { // Flat directory repository (folder full of *.jar files)
+        dirs 'libs' // Directory to include
+    }
+    // Commonly used repositories
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+
+    // Resolve managed dependencies (for maven and ivy repositories)
+    maven { url 'https://repo.foo.org/m2' }
+    ivy {
+        url 'https://repo.foo.org/ivy'
+        credentials { // maybe require to access a repository
+            username 'user'
+            password 'secret'
+        }
+    }
+}
+
+// Logically related dependencies are grouped into configurations
+// configurations (fancy file collections): compile, runtime, testCompile, testRuntime
+apply plugin: "java" // Specified dependencies are on the class path when the corrosponding tasks are ran
+dependencies {
+    compile 'com.google.guava:guava:18.0' // Add dependency to configuration from java plugin (same as below)
+/*  compile group: 'com.google.guava', name: 'guava', version: '18.0' */
+    compile files('libs/foo.jar', 'libs/bar.jar') // add files as dependencies
+    compile fileTree(dir: 'libs', include: '*.jar') // add files as dependencies with file tree being able to filter
+}
+// configurations: compile, runtime, testCompile, testRuntime
+dependencies { // configuration
+    compile 'commons-logging:commons-logging:1.1.3' 
+    testCompile 'junit:junit:4.11' // extends from compile configuration (all dependencies in compile config are in testCompile) 
+}
+/* Custom configurations */
+configurations {
+    custom
+    compile.extendsFrom(custom) // extends custom configuration for compile
+} // name of configuration
+dependencies { custom 'com.google.guava:guava:18.0' } // Assigning dependencies to that custom configuration
+task zipDeps(type: Zip) { // Zips dependencies from deps config
+    // Output Name: baseName-appendix-version-classifier-extension.zip
+    baseName "dependencyArchive"
+    classifier = 'deps'
+    from(configurations.custom)
+}
+
+/*
+Refresh and print dependencies:
+    $ gradle -b repositories.gradle --refresh-dependencies printDependencies
+*/
+task printDependencies { doLast { configuration.compile.each { println(it.name) } } } // Prints all dependencies from configuration file
+
+/* Dependency report task
+Gradle resolves dependency conflicts by using most up to date dependency
+
+Generate dependency report:
+    $ gradle -b repositories.gradle dependencies
+Generate dependency report for a specific configuration (runtime in this example):
+    $ gradle -b repositories.gradle dependencies --configuration runtime
+Generate dependency insite report (how a dependency is included in project - commons-logging in this example):
+    $ gradle -b repositories.gradle dependencyInsight --dependency commons-logging
+*/

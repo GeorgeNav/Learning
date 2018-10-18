@@ -1,0 +1,30 @@
+/* Reference: Functions */
+
+def noArgs() { println("No arguments") }
+def oneArg(x) { println("One argument: $x") }
+def twoArgs(x,y) { println("Two arguments: $x, $y") }
+noArgs() // Calls dynamic function
+oneArg(1) // Calls dynamic function
+twoArgs(1,2) // Calls dynamic function
+
+/* Closures */
+def closure = {
+    println("This is a closure value")
+    println("This is another line from the closure")
+    println("foo = $foo")
+}
+closure() // Closure is accessed like this
+def bar = closure // bar is closure now
+def baz = bar // baz is closure since bar is closure
+baz() // calls closure
+
+def doubleIt(n) { // Dynamic function that will return whichever type it adds together
+    n + n
+}
+def doubleItClosure = { x -> x + x } // just like doubleIt, this closure takes in a x value and returns x + x of a type
+
+task closureList {
+    def list = ["Reeses","Fun Dip","Sour Patch Straws","Snickers","Pull and Peels"] // Create an array of Strings (needs equal sign for multiple)
+    def listCap = list.collect{ it.toUpperCase } // takes in each element and returns and uppercase version of it for each respection element slot
+    listCap.each{ println(it) } // Prints each element in the list
+}

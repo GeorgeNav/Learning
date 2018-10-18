@@ -1,0 +1,11 @@
+/* Reference: Custom tasks */
+
+/* Defining and using a custom Task Type */
+class HelloTask extends DefaultTask { // Defining a custom class must extend DefaultTask for normal functionality
+    String firstName // does not need a getter or setter method since groovy takes care of it
+    @TaskAction // Makes following function a task from DefaultTask class
+    void doAction() { // This method is called when using a custom task as a parameter
+        println("Hello $firstName from custom class HelloTask")
+    }
+}
+task sayHello(type: HelloTask) { firstName = 'George' } // Calls doAction() function from custom class. sets firstName to George before using method
