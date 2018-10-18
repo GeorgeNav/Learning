@@ -1,2 +1,2 @@
 # Learning
-Everything I have learned
+Everything I am learning
