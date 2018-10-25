@@ -3,7 +3,7 @@ HTML and PHP can be used in this type of file
 
 Terminal Commands
     Create php webserver
-        > php -S localhost:4000
+        > cd /Users/georgenav/GoogleDrive/Development/Site; php -S localhost:4000
 Browser link to run php file
     http://localhost:4000/PHP/firstSite.php
 -->
