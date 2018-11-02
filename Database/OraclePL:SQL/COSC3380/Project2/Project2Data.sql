@@ -7,6 +7,8 @@ DROP TABLE Product CASCADE CONSTRAINTS;
 DROP TABLE Orderr CASCADE CONSTRAINTS;
 DROP TABLE OrderLine CASCADE CONSTRAINTS;
 DROP TABLE PriceUpdate CASCADE CONSTRAINTS;
+DROP PROCEDURE ProductLineSale;
+DROP TRIGGER StandardPriceUpdate;
 
 -- Customers
 CREATE TABLE Customer (
@@ -95,16 +97,17 @@ CREATE TABLE Product (
     p_standard_price CHAR(30),
     pl_id CHAR(30),
     p_photo CHAR(30),
+    SalePrice DECIMAL(6,2),
     PRIMARY KEY ( p_id ),
     FOREIGN KEY ( pl_id ) REFERENCES ProductLine );
-INSERT INTO Product VALUES ( 1, 'End Table', 'Cherry', 175, 1, 'table.jpg' );
-INSERT INTO Product VALUES ( 2, 'Coffee Table', 'Natural Ash', 200, 2, NULL );
-INSERT INTO Product VALUES ( 3, 'Computer Desk', 'Natural Ash', 375, 2, NULL );
-INSERT INTO Product VALUES ( 4, 'Entertainment Center', 'Natural Maple', 650, 3, NULL );
-INSERT INTO Product VALUES ( 5, 'Writers Desk', 'Cherry', 325, 1, NULL );
-INSERT INTO Product VALUES ( 6, '8-Drawer Desk', 'White Ash', 750, 2, NULL );
-INSERT INTO Product VALUES ( 7, 'Dining Table', 'Natural Ash', 800, 2, NULL );
-INSERT INTO Product VALUES ( 8, 'Computer Desk', 'Walnut', 250, 3, NULL );
+INSERT INTO Product VALUES ( 1, 'End Table', 'Cherry', 175, 1, 'table.jpg', NULL );
+INSERT INTO Product VALUES ( 2, 'Coffee Table', 'Natural Ash', 200, 2, NULL, NULL );
+INSERT INTO Product VALUES ( 3, 'Computer Desk', 'Natural Ash', 375, 2, NULL, NULL );
+INSERT INTO Product VALUES ( 4, 'Entertainment Center', 'Natural Maple', 650, 3, NULL, NULL );
+INSERT INTO Product VALUES ( 5, 'Writers Desk', 'Cherry', 325, 1, NULL, NULL );
+INSERT INTO Product VALUES ( 6, '8-Drawer Desk', 'White Ash', 750, 2, NULL, NULL );
+INSERT INTO Product VALUES ( 7, 'Dining Table', 'Natural Ash', 800, 2, NULL, NULL );
+INSERT INTO Product VALUES ( 8, 'Computer Desk', 'Walnut', 250, 3, NULL, NULL );
 
 -- Orderr
 CREATE TABLE Orderr (
@@ -154,8 +157,49 @@ INSERT INTO OrderLine VALUES ( 1010, 8, 10, NULL );
 
 -- PriceUpdate
 CREATE TABLE PriceUpdate (
-    pu_id CHAR(30) NOT NULL,
+    pu_id NUMBER GENERATED ALWAYS AS IDENTITY,
     pu_date DATE,
     pu_old_price REAL,
     pu_new_price REAL,
     PRIMARY KEY ( pu_id ) );
+
+-- Question 1: Simple Stored Procedure
+CREATE OR REPLACE PROCEDURE ProductLineSale AS
+    BEGIN
+        UPDATE Product P
+            SET SalePrice = (P.p_standard_price - P.p_standard_price * 0.15)
+                WHERE P.p_standard_price < 400;
+        UPDATE Product P
+            SET SalePrice = (P.p_standard_price - P.p_standard_price * 0.1)
+                WHERE P.p_standard_price >= 400;
+    END ProductLineSale;
+/
+-- Question 2: Trigger
+-- TODO: Procedures ( CALL ProductLineSale(); ) cannot be called inside a trigger. Find a way?
+DROP TRIGGER StandardPriceUpdate;
+CREATE TRIGGER StandardPriceUpdate
+    BEFORE UPDATE ON Product
+    FOR EACH ROW
+        BEGIN
+            IF(:NEW.p_standard_price != :OLD.p_standard_price) THEN
+                INSERT INTO PriceUpdate ( pu_date, pu_old_price, pu_new_price )
+                    VALUES ( SYSDATE, :OLD.p_standard_price, :NEW.p_standard_price );
+            END IF;
+        END StandardPriceUpdate;
+/
+/*
+-- This should not add a new row to PriceUpdate table since the p_standard_price is already 175 originally
+UPDATE Product P
+	SET P.p_standard_price = 175
+    	WHERE P.p_id = 1;
+
+-- This should add a new row to PriceUpdate table since the p_standard_price is not the same as new value originally
+UPDATE Product P
+	SET P.p_standard_price = 155
+    	WHERE P.p_id = 1;
+
+-- This should add a multiple rows to PriceUpdate table since the p_standard_price is not the same for both Products originally
+UPDATE Product P
+	SET P.p_standard_price = 155
+    	WHERE P.p_id = 2 OR P.p_id = 3;
+*/
