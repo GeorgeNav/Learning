@@ -157,7 +157,7 @@ INSERT INTO OrderLine VALUES ( 1010, 8, 10, NULL );
 
 -- PriceUpdate
 CREATE TABLE PriceUpdate (
-    pu_id NUMBER(6,2) GENERATED ALWAYS AS IDENTITY,
+    pu_id NUMBER GENERATED ALWAYS AS IDENTITY,
     pu_date DATE,
     pu_old_price DECIMAL(6,2),
     pu_new_price DECIMAL(6,2),
