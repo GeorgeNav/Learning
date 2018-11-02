@@ -176,8 +176,7 @@ CREATE OR REPLACE PROCEDURE ProductLineSale AS
 /
 -- Question 2: Trigger
 -- TODO: Procedures ( CALL ProductLineSale(); ) cannot be called inside a trigger. Find a way?
-DROP TRIGGER StandardPriceUpdate;
-CREATE TRIGGER StandardPriceUpdate
+CREATE OR REPLACE TRIGGER StandardPriceUpdate
     BEFORE UPDATE ON Product
     FOR EACH ROW
         BEGIN
