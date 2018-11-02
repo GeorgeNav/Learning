@@ -94,7 +94,7 @@ CREATE TABLE Product (
     p_id CHAR(30) NOT NULL,
     p_name CHAR(30),
     p_finish CHAR(30),
-    p_standard_price CHAR(30),
+    p_standard_price DECIMAL(6,2),
     pl_id CHAR(30),
     p_photo CHAR(30),
     SalePrice DECIMAL(6,2),
@@ -157,10 +157,10 @@ INSERT INTO OrderLine VALUES ( 1010, 8, 10, NULL );
 
 -- PriceUpdate
 CREATE TABLE PriceUpdate (
-    pu_id NUMBER GENERATED ALWAYS AS IDENTITY,
+    pu_id NUMBER(6,2) GENERATED ALWAYS AS IDENTITY,
     pu_date DATE,
-    pu_old_price REAL,
-    pu_new_price REAL,
+    pu_old_price DECIMAL(6,2),
+    pu_new_price DECIMAL(6,2),
     PRIMARY KEY ( pu_id ) );
 
 -- Question 1: Simple Stored Procedure
@@ -201,4 +201,8 @@ UPDATE Product P
 UPDATE Product P
 	SET P.p_standard_price = 155
     	WHERE P.p_id = 2 OR P.p_id = 3;
+-- This test for decimal precision
+UPDATE Product P
+	SET P.p_standard_price = 125.52342
+    	WHERE P.p_id = 4;
 */
