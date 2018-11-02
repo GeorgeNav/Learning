@@ -1,5 +1,0 @@
-Comparing two files
-+ means line was added
-- means line was removed
-Command
-    diff -u file1.extension file2.extension
