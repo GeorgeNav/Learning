@@ -201,6 +201,7 @@ UPDATE Product P
 UPDATE Product P
 	SET P.p_standard_price = 155
     	WHERE P.p_id = 2 OR P.p_id = 8;
+
 -- This test for decimal precision
 UPDATE Product P
 	SET P.p_standard_price = 125.52342
