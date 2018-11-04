@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Everything Else</title>
+        <link rel="stylesheet" href="CSS/hyperlink.css">
+        <link rel="stylesheet" href="CSS/table.css">
+   </head>
+    <body style="background-image:url('images/ned.jpg')">
+        <table>
+            <caption>Caption for table</caption>
+            <tr>
+                <th>Header Cell 1</th>
+                <th>Header Cell 2</th>
+            </tr>
+            <tr>
+                <th><img src="images/smiley.gif" width="50"></th>
+                <th><img src="images/smiley.gif" width="50"></th>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <caption>Caption for table</caption>
+            <tr>
+                <th>Damn</th>
+                <td>Diddly</td>
+            </tr>
+            <tr>
+                <th rowspan="2">2 Row Heading Cell</th>
+                <td>1st Cell</td>
+            </tr>
+            <tr>
+                <td>2nd Cell</td>
+            </tr>
+        </table>
+        <h1 id="C4">Top of Page</h1>
+        <a
+         title="tool tip!"
+         href="https://www.w3schools.com/html/"
+         target="_blank"> <!-- link to an external site -->
+            Visit our HTML tutorial
+        </a>
+        <a href="#C4">Jump to the top of the page!</a>
+        <a href="html_demo.html#C4">Jump to element with id C4 on another page</a>
+        <pre style="background-color: red">
+            I am having so much fun writing this.
+            IDK my bff jill.
+            This is so much fun I think
+            I am going to cry right now.
+            Don't stop me now.
+            Fun fun fun fun.
+            On a friday.
+            <a href="default.asp"> <!-- local link (uses relative site location) -->
+                <img
+                    src="images/smiley.gif"
+                    alt="HTML tutorial"
+                    width="100"
+                    height="100"
+                    style="float:right">
+            </a>
+        </pre>
+        <img src="images/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+        <map name="workmap">
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+        </map>
+        <picture> <!-- TODO: Used for multiple of the same pictures for different view/device sizes -->
+            <source media="(min-width: 650px)" srcset="img_pink_flowers1.jpg">
+            <source media="(min-width: 465px)" srcset="img_pink_flowers2.jpg">
+            <img src="img_orange_flower.jpg" alt="Flowers" style="width:auto;">
+        </picture>
+        <ul>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Ice cream</li>
+        </ul>
+        <ol>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Ice cream</li>       
+        </ol>
+        <ul style="list-style-type:disc">
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Ice cream</li>
+        </ul>
+        <ul style="list-style-type:circle">
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Ice cream</li>
+        </ul>
+        <ul style="list-style-type:square">
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Ice cream</li>
+        </ul>
+        <ol type="i"> <!-- 1,A,a,I,i -->
+                <li>Coffee</li>
+                <li>Milk</li>
+                <li>Ice cream</li>       
+        </ol>
+        <dl> <!-- description list -->
+            <dt>Coffee</dt> <!-- discription term -->
+            <dd>- black hot drink</dd>
+            <dt>Milk</dt> <!-- discription term -->
+            <dd>- white cold drink</dd>
+        </dl>
+        <ul> <!-- Nested list -->
+            <li>Coffee</li>
+            <li>Tea
+            <ul>
+                <li>Black tea</li>
+                <li>Green tea</li>
+            </ul>
+            </li>
+            <li>Milk</li>
+        </ul>
+        <ol start="67">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+            <li><a src="https://www.google.com" target="_blank">Google</a></li>
+        </ol>
+        <!-- Container for HTML elements (style,class,id are common attributes) -->
+        <div>Damn</div> <!-- Creates new line with each div (left and right max span) -->
+        <div>Diddly</div>
+        <!-- Container for text (used to style part of text) -->
+        <span>Damn</span> <!-- Doesn't create new line -->
+        <span>Diddly</span>
+    </body>
+</html>

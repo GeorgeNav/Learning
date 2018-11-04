@@ -157,11 +157,12 @@ INSERT INTO OrderLine VALUES ( 1010, 8, 10, NULL );
 
 -- PriceUpdate
 CREATE TABLE PriceUpdate (
-    pu_id NUMBER GENERATED ALWAYS AS IDENTITY,
+    p_id CHAR(30),
     pu_date DATE,
     pu_old_price DECIMAL(6,2),
     pu_new_price DECIMAL(6,2),
-    PRIMARY KEY ( pu_id ) );
+    PRIMARY KEY ( p_id, pu_date ),
+    FOREIGN KEY ( p_id ) REFERENCES Product );
 
 -- Question 1: Simple Stored Procedure
 CREATE OR REPLACE PROCEDURE ProductLineSale AS
@@ -181,8 +182,7 @@ CREATE OR REPLACE TRIGGER StandardPriceUpdate
     FOR EACH ROW
         BEGIN
             IF(:NEW.p_standard_price != :OLD.p_standard_price) THEN
-                INSERT INTO PriceUpdate ( pu_date, pu_old_price, pu_new_price )
-                    VALUES ( SYSDATE, :OLD.p_standard_price, :NEW.p_standard_price );
+                INSERT INTO PriceUpdate VALUES ( :OLD.p_id, SYSDATE, :OLD.p_standard_price, :NEW.p_standard_price );
             END IF;
         END StandardPriceUpdate;
 /
@@ -200,9 +200,9 @@ UPDATE Product P
 -- This should add a multiple rows to PriceUpdate table since the p_standard_price is not the same for both Products originally
 UPDATE Product P
 	SET P.p_standard_price = 155
-    	WHERE P.p_id = 2 OR P.p_id = 3;
+    	WHERE P.p_id = 2 OR P.p_id = 8;
 -- This test for decimal precision
 UPDATE Product P
 	SET P.p_standard_price = 125.52342
-    	WHERE P.p_id = 4;
+    	WHERE P.p_id = 3;
 */
