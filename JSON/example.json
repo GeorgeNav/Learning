@@ -1,0 +1,12 @@
+{   
+    "_comment": "Name Value (string,number,JSON object,array,boolean,null) pair",
+    "Key":{
+        "Name":"Value",
+        "String":"This is a string",
+        "Integer Number":4,
+        "Decimal Number":4.2,
+        "JSON object":"??? FIXME: Can only do in Javascript ???",
+        "Array":["Value1","Value2","Value3"],
+        "Null":null
+    }
+}
