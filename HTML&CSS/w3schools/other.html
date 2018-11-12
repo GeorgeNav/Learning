@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Everything Else</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Learning stuff">
+        <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+        <meta name="author" content="George Navarro">
+        <meta http-equiv="refresh" content="30"> <!-- refreshes web page every 30 secs -->
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Other Tools</title>
         <link rel="stylesheet" href="CSS/hyperlink.css">
         <link rel="stylesheet" href="CSS/table.css">
+        <style>
+            .className {
+                background-color: black;
+                color: white;
+                margin: 20px;
+                padding: 20px;
+            }
+            .note {
+                font-size: 120%;
+                color: blue;
+            }
+            #C4 { /* style for tag with unique id of C4 */
+                color: brown;    
+            }
+        </style>
+        <script>
+            /* TODO: get function to work for top of page header */
+            function myFunction() {
+                document.getElementById("C4").innerHTML = "Top of the Page";
+            }
+        </script>
    </head>
-    <body style="background-image:url('images/ned.jpg')">
+    <body> 
+        <h1 id="C4" style="background-image:url('images/ned.jpg')"></h1>
+         <div class="className"> <!-- uses class for block -->
+            <h2>This is made from class className</h2>
+            <p>I am really liking this language.</p>
+        </div>
         <table>
             <caption>Caption for table</caption>
             <tr>
@@ -32,7 +64,6 @@
                 <td>2nd Cell</td>
             </tr>
         </table>
-        <h1 id="C4">Top of Page</h1>
         <a
          title="tool tip!"
          href="https://www.w3schools.com/html/"
@@ -43,12 +74,13 @@
         <a href="html_demo.html#C4">Jump to element with id C4 on another page</a>
         <pre style="background-color: red">
             I am having so much fun writing this.
-            IDK my bff jill.
+            IDK my <span class="note">bff jill</span>.
             This is so much fun I think
-            I am going to cry right now.
+            I am going to cry right now. <kbd>Ctrl + S</kbd>
+            Here's some code: <code> x^2 + y^2 = r^2 </code>
             Don't stop me now.
             Fun fun fun fun.
-            On a friday.
+            On a <span class="className note">friday</span>. <!-- multiple classes -->
             <a href="default.asp"> <!-- local link (uses relative site location) -->
                 <img
                     src="images/smiley.gif"
@@ -127,5 +159,9 @@
         <!-- Container for text (used to style part of text) -->
         <span>Damn</span> <!-- Doesn't create new line -->
         <span>Diddly</span>
+        <br>
+        <iframe name="iframeName" src="basics.html" height="200" width="750"></iframe>
+        <br>
+        <a href="csstypes.html" target="iframeName">csstypes</a>
     </body>
 </html>
