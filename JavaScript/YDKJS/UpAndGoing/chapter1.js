@@ -1,6 +1,7 @@
-console.log("Hello"); // Prints output
-/* alert("Please enter your name"); */ // Gathers user input (browser only)
+// Chapter 1
 
+console.log("---------- Chapter 1 ----------"); // Prints output
+/* alert("Please enter your name"); */ // Gathers user input (browser only)
 // Loose vs strict equals/not equals
 var a = "42"; // Can be changed to a number data type if needed because JavaScript uses dynamic typing
 var b = 42;
@@ -13,9 +14,8 @@ if (a === b) // Here type conversion is not done (ideal)
 else if (a !== b)
     console.log("a is not strictly equal to b");
 
+// Constant value and functions
 const TAX_RATE = 0.08; // This value cannot be changed
-function total (val) {
-    return val + val*TAX_RATE;
-}
+function total (val) { return val + val*TAX_RATE; }
 var amount = 199.993977; // Fixes number value to 2 decimal places
 console.log("$" + total(amount).toFixed(2));
