@@ -15,10 +15,7 @@ class Rectangle extends Quadrilateral {
   }
   Rectangle.square(num anySide) : this(anySide, anySide); // Redirecting constructor
   @override
-    noSuchMethod(Invocation invocation) {
-      // TODO: implement noSuchMethod
-      return super.noSuchMethod(invocation);
-    }
+    noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation); // this gets called if a method being called doesn't exist in this class
   @override
   set leftDim(num val) {
     this.left = val;

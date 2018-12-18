@@ -1,5 +1,6 @@
 class Quadrilateral {
   num left, right, top, bottom;
+  String _name; // _ means that it's private to this class?
   // Quadrilateral(this.left, this.right, this.top, this.bottom);
   num get leftDim => this.left;
   num get rightDim => this.right;

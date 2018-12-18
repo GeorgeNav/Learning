@@ -1,6 +1,7 @@
 import "dart:core";
 printInteger(int aNumber) { print('The number is $aNumber'); } // print to console
 main() { // App executes here
+  void junkFn(val) => print(val); // short hand for a function with one statement
   dynamic number = 42; // Declare and initialize a variable
   printInteger(number); // Call the function printInteger
   dynamic val;
@@ -14,7 +15,7 @@ main() { // App executes here
   var huh = 0/0;
   assert(huh.isNaN == true);
   var list = ["a",1,'c'];
-  print("$list" + " with length: ${list.length}");
+  print("$list with length: ${list.length}");
   var constantList = const [1,2,3];
   /* constantList[1] = 3; */ // Cannot work since list object is constant
   print(constantList);
@@ -22,9 +23,9 @@ main() { // App executes here
     "hello":"greetings",
     "bye":"goodbye"
   };
-  sayings["wow"] = "very cool";
+  sayings["wow"] = "very cool"; // adds key:value pair
   print(sayings);
-  int ouch(int val, [int otherVal]) { // {int otherVal = 2, ... } Default values
+  int ouch(int val, [int otherVal]) { // [int otherVal, ... ] optional variables
     if(otherVal != null)
       return val + otherVal;
     else
@@ -33,10 +34,7 @@ main() { // App executes here
   print(ouch(2,3));
   print(ouch(2));
 
-  void lists({List<int> lis = const [1,2,3]}) { // passes default list if there is no argument when called
-    print(lis);
-  }
-  void junkFn(val) => print(val); // short hand for a function with one statement
+  void lists({List<int> lis = const [1,2,3]}) => print(lis); // passes default object if method is called with no arg
   var values = ["apples","bananas","oranges"];
   values.forEach( (item) => print("${values.indexOf(item)}: $item") );
 }
