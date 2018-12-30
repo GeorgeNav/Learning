@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "573594602403",
+    "firebase_url": "https://baby-names-vote-db.firebaseio.com",
+    "project_id": "baby-names-vote-db",
+    "storage_bucket": "baby-names-vote-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573594602403:android:fb3fc4f9270deffe",
+        "android_client_info": {
+          "package_name": "com.navality.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573594602403-bk78ggsr8nk86u87ejk3d6cvfnfeqpvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnhkiSRgiyUmoDqGEJitaMiFCehf6UZdE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
