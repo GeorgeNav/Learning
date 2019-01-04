@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "495058069772",
+    "firebase_url": "https://diysb-2403c.firebaseio.com",
+    "project_id": "diysb-2403c",
+    "storage_bucket": "diysb-2403c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495058069772:android:0974cbf276e09911",
+        "android_client_info": {
+          "package_name": "com.navality.diysb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495058069772-ljl9v7lbd8r0reuaq6fe25f6v8ajm16k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeE5DsgxpHQIjRyAry2LpeI41okndKXkI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
