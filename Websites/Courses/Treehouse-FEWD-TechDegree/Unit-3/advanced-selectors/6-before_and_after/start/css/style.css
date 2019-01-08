@@ -1,0 +1,28 @@
+/* Pseudo-elements -------------------------------- */
+
+.intro::first-line {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.intro::first-letter {
+  float: left;
+  font-size: 80px;
+  color: white;
+  padding: 5px 10px;
+  background: #384047;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.jpg::before { /* generated before elements with jpg class */
+  content: "JPG - "; /* content you want before element (which can be empty) */ 
+}
+.jpg::after { /* generated after elements with jpg class */
+  content: url(../img/icn-picture.svg); /* content you want after the element */ 
+  padding-left: 0.5em;
+}
+.d-loads a::after {
+  content: attr(href); /* uses the attribute's title value as content */
+}

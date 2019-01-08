@@ -1,0 +1,74 @@
+/* Attribute Selectors ------------- */
+
+form[class="form-contact"] { /* targets a form element with a class attribute with the value of form-contact */ 
+    /* same as .form-contact */
+}
+
+div[id="container"] { }
+
+input[placeholder] { /* Any input element that has a placeholder attribute */ }
+
+a[target="_blank"] { }
+
+/* DRY (Don't repeat yourself) Classes ------------- */
+
+.br { /* this class is specified for the br elements */ }
+
+/* Combinators ------------- */
+
+form > a { /* targets direct child of form */ }
+
+.btn + .btn { /* adgacent sibling (next to eachother) */ }
+
+h1 ~ label { /* all sibling label elements that follow a h1 */ }
+
+/* Substring Matching Attribute Selectors ---- */
+a[href^="http:"] { /* ^ means begins with selector */ }
+
+a[href$=".pdf"] { /* $ means ends with selector */
+	background-image: url('../img/icn-pdf.svg');
+}
+
+a[href$=".jpg"] { /* $ means ends with selector */
+	background-image: url('../img/icn-picture.svg');
+}
+
+a[href$=".zip"] { /* $ means ends with selector */
+	background-image: url('../img/icn-zip.svg');
+}
+
+a[href*="downloads"] { /* * means contains selector */ }
+
+img[src*="thumbnails"] { }
+
+li:nth-child(3n+3) { /* even, odd, # (1,2,3...), an+b (up every a/-a list item starting from b item) where type doesn't matter */ }
+
+li:nth-of-type(3n+3) { /* same as above but type does matter */ }
+
+li:nth-last-of-type(2) { /* targets last # (1,2,3...) element of type li */ }
+
+:root { /* targest html element since it's the root of the html document */ }
+
+:target { /* changes whatever element that was targeted by id */ }
+
+#col-c:target { /* changes the element with id of col-c element when targeted */ }
+
+div:not(#col-a) { /* every div element that does not have the id of col-a */ }
+
+div:not([type="submit"]) { /* everything div element that does have attribute/value of type/submit */ }
+
+.col:not(:first-child) { /* every element with col class that is not the first child */ }
+
+.text::first-line { /* targest first line of the text no matter how the browser represents it */ }
+
+.text::first-letter { /* targest first letter of the text no matter how the browser represents it (for drop cat) */ }
+
+.jpg::before { /* generated before elements with jpg class */
+    content: ""; /* content you want before element */ 
+}
+.jpg::after { /* generated after elements with jpg class */
+    content: url(../img/icn-picture.svg); /* content you want after the element */ 
+}
+.d-loads a::after {
+    content: attr(title); /* uses the attribute's title value as content */
+  }
