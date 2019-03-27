@@ -7,5 +7,9 @@ main() {
   rec.topDim = 2;
   print(rec.topDim);
   var squ = Rectangle.square(5);
-  print("Square: left is ${squ.leftDim}, right is ${squ.rightDim}, top is ${squ.topDim}, bottom is ${squ.bottom}");
+  print(
+    "Square: left is ${squ.leftDim},\n" +
+    "right is ${squ.rightDim},\n" +
+    "top is ${squ.topDim},\n" + 
+    "bottom is ${squ.bottom}");
 }
