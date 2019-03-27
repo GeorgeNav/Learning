@@ -1,0 +1,8 @@
+[package]
+name = "first_project"
+version = "0.1.0"
+authors = ["GeorgeNav <george.g.navarro@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+pretty_assertions = "0.5.1"
