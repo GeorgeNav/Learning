@@ -25,14 +25,14 @@ Time Complexity (# of statements)
         comparisons: (n - 1)
         assignments: 1 = 1 + 0
 Space Complexity (additional space needed + input space)
-    n + 2 units = input + tempMax + i units
+    n + 2 units = input + tempMax + i unit
         input: n units
         tempMax: 1 unit
         i: 1 unit
 */
 void max(int arr[], int size) { // statement count: n = 1 + (n - 1)
     int tempMax = arr[0]; // assignments: 1
-    for(int i = 1; i <  size; i++) // comparisons: (n - 1)
+    for(int i = 1; i < size; i++) // comparisons: (n - 1)
         if(tempMax < arr[i]) // assignments: 0 (best case) to n-1 (worst case)
             tempMax = arr[i];
     printf("%d\n",tempMax);
