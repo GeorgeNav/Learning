@@ -1,0 +1,26 @@
+<h1>Todo List</h1>
+<!-- <todo-list></todo-list> -->
+<input [type]="inputType" [value]="name" (click)="goodJob()">
+<div [class.first]="cssProp" [class.second]="!cssProp">Hello there</div>
+<input type="text" [(ngModel)]="something">
+<input type="text" [(ngModel)]="something">
+<input type="text" [value]="something" (click)="changeClass()">
+<div *ngIf="exist">I exist because of *ngIf and exist boolean</div>
+<div [ngSwitch]="car">
+    <input type="text" [(ngModel)]="car" (click)="clear()">
+    <input type="button" value="toyota" *ngSwitchCase="'toyota'" (click)="clear()">
+    <input type="button" value="buick" *ngSwitchCase="'buick'" (click)="clear()">
+    <input type="button" value="no car" *ngSwitchDefault (click)="clear()">
+</div>
+<div [ngClass]="whichClasses" #car_stuff>
+    <div *ngFor="
+        let car of cars;
+        let i=index;
+        let f=first;
+        let l=last;
+        let o=odd;
+        let e=even">
+        <div *ngIf="e">{{i}}. {{car}}</div>
+    </div>
+</div>
+{{car_stuff}}

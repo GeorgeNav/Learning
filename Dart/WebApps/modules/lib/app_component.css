@@ -1,0 +1,15 @@
+div {color: blue;}
+.first {
+    color: red;
+    background-color: blue;
+}
+.second {
+    color: blue;
+    background-color: red;
+}
+.aClass1 {
+    color: magenta;
+}
+.aClass2 {
+    background-color: yellow;
+}
