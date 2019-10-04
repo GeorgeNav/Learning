@@ -1,0 +1,11 @@
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/bin/Debug/netcoreapp2.2/test.deps.json
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/bin/Debug/netcoreapp2.2/test.runtimeconfig.json
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/bin/Debug/netcoreapp2.2/test.runtimeconfig.dev.json
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/bin/Debug/netcoreapp2.2/test.dll
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/bin/Debug/netcoreapp2.2/test.pdb
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/obj/Debug/netcoreapp2.2/test.csprojAssemblyReference.cache
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/obj/Debug/netcoreapp2.2/test.csproj.CoreCompileInputs.cache
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/obj/Debug/netcoreapp2.2/test.AssemblyInfoInputs.cache
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/obj/Debug/netcoreapp2.2/test.AssemblyInfo.cs
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/obj/Debug/netcoreapp2.2/test.dll
+/Users/georgenav/GoogleDrive/Development/Learning/.NET/test/obj/Debug/netcoreapp2.2/test.pdb

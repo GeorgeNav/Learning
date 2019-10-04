@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "893653071775",
+    "firebase_url": "https://fireship-8ce36.firebaseio.com",
+    "project_id": "fireship-8ce36",
+    "storage_bucket": "fireship-8ce36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893653071775:android:f8f5ea03563aaffc",
+        "android_client_info": {
+          "package_name": "com.navality.quizappp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893653071775-44laals9c1i2hvqinihe7umf2o9qr0uk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navality.quizappp",
+            "certificate_hash": "90380fbd33e97227d6613777256b619929c23a24"
+          }
+        },
+        {
+          "client_id": "893653071775-1suo85vdh6v3vm3pm9gsb8pkbm5rkt6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkgFftmoHwD28Xj08qWjoOcSBIqVtWakA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893653071775-1suo85vdh6v3vm3pm9gsb8pkbm5rkt6g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "893653071775-jvf4ait48lkiv9a0lp09rama7qlsa49a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.navality.quizapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
